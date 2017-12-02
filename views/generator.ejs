@@ -1,0 +1,40 @@
+<% include partials/header %> 
+
+<h1>Amazing Character Generator</h1>
+
+<div class="container">
+    <h2>Traits</h2>
+    <div class="inner-container">
+        <div class="trait-gen">
+            <h4>Positive Trait</h4>
+            <div id="positive-trait"><p>Good</p></div>
+        </div>
+        <div class="trait-gen">
+            <h4>Negative Trait</h4>
+            <div id="negative-trait"><p>Bad</p></div>
+        </div>
+        <div class="trait-gen">
+            <h4>Character Type</h4>
+            <div id="character-type"><p>Hero</p></div>
+        </div>
+        <button id="trait-button" class="btn btn-info">Generate Traits</button>
+        <a href="/traits/<%= traits[0]._id %>/edit" class="btn btn-primary">Edit Traits</a>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <h2>Name</h2>
+    <div class="inner-container">
+        <div class="name-gen">
+            <h4>First Name</h4>
+            <div id="first-name"><p>Type of rock</p></div>
+        </div>
+        <div class="name-gen">
+            <h4>Last Name</h4>
+            <div id="last-name"><p>Color</p></div>
+        </div>
+        <button id="name-button" class="btn btn-info">Generate Name Ideas</button>
+    </div>
+</div>
+        
+<% include partials/footer %>

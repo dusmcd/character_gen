@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #ccf2ff;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+#positive-trait, #negative-trait, #character-type, #first-name, #last-name {
+    font-family: 'Playfair Display', serif;
+}
+
+.inner-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5%;
+}
+
+.trait-gen {
+    width: 30%;
+    margin: 0 1.66%;
+}
+
+.name-gen {
+    width: 45%;
+    margin: calc(10%/4);
+}

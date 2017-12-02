@@ -1,0 +1,16 @@
+<% include partials/header %>
+
+<form action="/traits/<%= trait._id %>?_method=PUT" method="post">
+    <label for="new-positive">Add Positive Trait</label>
+    <input id="new-positive" name="positiveTrait" type="text">
+    
+    <label for="new-negative">Add Negative Trait</label>
+    <input id="new-negative" name="negativeTrait" type="text">
+    
+    <label for="new-type">Add Character Type</label>
+    <input id="new-type" name="characterType" type="text">
+    
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+<% include partials/footer %>
