@@ -3,10 +3,11 @@ const express = require('express'),
       mongoose = require('mongoose'),
       Trait = require('./models/trait'),
       Name = require('./models/name'),
-      bodyParser = require('body-parser');
+      bodyParser = require('body-parser'),
+      React = require('react');
     
 //configure app
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'),
 app.use(express.static(__dirname + '/public'));      
 
 //connect to db
@@ -40,7 +41,8 @@ app.get('/generating', function(req, res) {
             });
         }
     });
-    // res.send('Hello, there!');
+    // res.send('Hello, there!'),
+    React = require('react');
 });
 
 //edit traits
