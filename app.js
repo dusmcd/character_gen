@@ -2,9 +2,8 @@ const express = require('express'),
       app = express(),
       mongoose = require('mongoose'),
       Trait = require('./models/trait'),
-      Name = require('./models/name'),
-      bodyParser = require('body-parser'),
-      React = require('react');
+      Name = require('./models/name');
+    //   bodyParser = require('body-parser')
     
 //configure app
 app.set('view engine', 'ejs'),
