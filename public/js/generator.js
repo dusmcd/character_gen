@@ -108,8 +108,8 @@ function ajaxRequest(traitButtonId, nameButtonId) {
                 randomGenerator(response.traits, '#character-type', 2);
             });
             $(nameButtonId).on('click', function() {
-                randomGenerator(response.names[0], '#first-name', 'names');
-                randomGenerator(response.names[0], '#last-name', 'names');
+                randomGenerator(response.names, '#first-name', 0);
+                randomGenerator(response.names, '#last-name', 0);
             });
             
             
