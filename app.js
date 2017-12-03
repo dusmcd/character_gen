@@ -31,15 +31,15 @@ app.get('/', function(req, res) {
 });
 
 app.get('/generating', function(req, res) {
-    Trait.find({}, function(err, traitObject) {
+    Trait.find({}, function(err, traits) {
         if (err) {
             console.log(err);
         } else {
-            Name.find({}, function(err, nameObject) {
+            Name.find({}, function(err, names) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.send({traits: traitObject, names: nameObject});
+                    res.send({traits: traits, names: names});
                 }
             });
         }

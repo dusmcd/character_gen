@@ -91,7 +91,7 @@ function randomGenerator(data, idString, dataArray) {
     let randNumber = Math.floor(Math.random() * data[dataArray].length);
     $(idString).empty();
     $(idString).append(
-        '<p>' + data[dataArray][randNumber] + '</p>');
+        '<p>' + data[dataArray]['list'][randNumber] + '</p>');
 }
 
 function ajaxRequest(traitButtonId, nameButtonId) {
@@ -101,11 +101,11 @@ function ajaxRequest(traitButtonId, nameButtonId) {
         dataType: 'json',
         
         success: function(response) {
-            console.log('The server sent back this text: ' + response.traits[0].positiveTraits[0]);
+            console.log('The server sent back this text: ' + response.traits[0].list[0]);
             $(traitButtonId).on('click', function() {
-                randomGenerator(response.traits[0], '#positive-trait', 'positiveTraits');
-                randomGenerator(response.traits[0], '#negative-trait', 'negativeTraits');
-                randomGenerator(response.traits[0], '#character-type', 'characterTypes');
+                randomGenerator(response.traits, '#positive-trait', 0);
+                randomGenerator(response.traits, '#negative-trait', 1);
+                randomGenerator(response.traits, '#character-type', 2);
             });
             $(nameButtonId).on('click', function() {
                 randomGenerator(response.names[0], '#first-name', 'names');
