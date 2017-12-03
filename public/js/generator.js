@@ -88,7 +88,7 @@ function init() {
 }
 
 function randomGenerator(data, idString, dataArray) {
-    let randNumber = Math.floor(Math.random() * data[dataArray].length);
+    let randNumber = Math.floor(Math.random() * data[dataArray]['list'].length);
     $(idString).empty();
     $(idString).append(
         '<p>' + data[dataArray]['list'][randNumber] + '</p>');
