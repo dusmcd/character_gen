@@ -24,7 +24,7 @@ function ajaxRequest(traitButtonId, nameButtonId) {
         dataType: "json",
         
         success: function(response) {
-            console.log("The server sent back this text: " + response.traits[0].list[0]);
+            // console.log("The server sent back this text: " + response.traits[0].list[0]);
             $(traitButtonId).on("click", function() {
                 randomGenerator(response.traits, 'traits');
             });
