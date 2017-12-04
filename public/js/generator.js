@@ -47,11 +47,11 @@ function ajaxRequest(traitButtonId, nameButtonId) {
 function randomGenerator(data, dataModel) {
     if (dataModel === 'traits') {
         data.forEach(function(trait) {
-            switch(trait._id) {
-                case 0:
+            switch(trait.description) {
+                case 'positive':
                     updateView(trait.list, '#positive-trait');
                     break;
-                case 1:
+                case 'negative':
                     updateView(trait.list, '#negative-trait');
                     break;
                 default:
