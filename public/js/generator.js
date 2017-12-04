@@ -9,11 +9,12 @@ function init() {
     ajaxRequest("#trait-button", "#name-button");
 }
 
-function randomGenerator(data, idString, dataArray) {
-    let randNumber = Math.floor(Math.random() * data[dataArray]["list"].length);
-    $(idString).empty();
-    $(idString).append(
-        "<p>" + data[dataArray]["list"][randNumber] + "</p>");
+
+function updateView(data, idString) {
+    let randNumber = Math.floor(Math.random() * data.length);
+        $(idString).empty();
+        $(idString).append(
+            "<p>" + data[randNumber] + "</p>");  
 }
 
 function ajaxRequest(traitButtonId, nameButtonId) {
@@ -25,13 +26,10 @@ function ajaxRequest(traitButtonId, nameButtonId) {
         success: function(response) {
             console.log("The server sent back this text: " + response.traits[0].list[0]);
             $(traitButtonId).on("click", function() {
-                randomGenerator(response.traits, "#positive-trait", 0);
-                randomGenerator(response.traits, "#negative-trait", 2);
-                randomGenerator(response.traits, "#character-type", 1);
+                randomGenerator(response.traits, 'traits');
             });
             $(nameButtonId).on("click", function() {
-                randomGenerator(response.names, "#first-name", 0);
-                randomGenerator(response.names, "#last-name", 0);
+                randomGenerator(response.names, 'names');
             });
             
             
@@ -44,5 +42,27 @@ function ajaxRequest(traitButtonId, nameButtonId) {
         }
         
     });
+}
+
+function randomGenerator(data, dataModel) {
+    if (dataModel === 'traits') {
+        data.forEach(function(trait) {
+            switch(trait._id) {
+                case 0:
+                    updateView(trait.list, '#positive-trait');
+                    break;
+                case 1:
+                    updateView(trait.list, '#negative-trait');
+                    break;
+                default:
+                    updateView(trait.list, '#character-type');
+                    break;
+            }
+        });
+    }
+    else {
+        updateView(data[0].list, '#first-name');
+        updateView(data[0].list, '#last-name');
+    }
 }
 
